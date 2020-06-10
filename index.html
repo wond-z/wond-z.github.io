@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var v_Result;
+    function OneClick(event) {
+        console.log("detail",event.detail);
+        //if (event.detail == 2) 
+        //  return ; 
+        v_Result = false;
+        window.setTimeout(check, 300);
+        function check() {
+            if (v_Result != false) return;
+            console.log("单击");
+        }
+    }
+    function TwoClick() {
+        v_Result = true;
+        console.log("双击");
+    }
+</script>
+<button onclick="OneClick(event)">click</button>
+</body>
+</html>
