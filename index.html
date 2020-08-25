@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Slack:Where work happens</title>
+        <title>Wond-Z is here!</title>
         <meta charset="utf-8">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <link href="simpleDemo.css" rel="stylesheet" type="text/css" />
         <style type="text/css">
-        	* { margin: 0; padding: 0; }
+        	* {
+                margin: 0;
+                padding: 0;
+            }
+            html, body {
+                display: block;
+                overflow: hidden;
+            }
+            .asterisk {
+                cursor: pointer;
+            }
         </style>
     </head>
 
@@ -20,7 +30,7 @@
                             I'm Wond-Z
                             <br class="mobile-only">
                             work
-                            <sup class="asterisk">
+                            <sup class="asterisk" id="play">
                                 *
                             </sup>
                             <br>
@@ -30,6 +40,21 @@
                 </div>
             </div>
         </div>
+        <audio loop src="./resource/song.ogg" id="audio" autoplay>该浏览器不支持audio属性</audio>
     </body>
-
+    <script type="text/javascript">
+		function toggleSound() {
+			var music = document.getElementById("audio");
+			// console.dir(music)
+			if (music.paused) {
+				music.play();
+			} else {
+				music.pause();
+			}
+		}
+        var play = document.getElementById('play');
+        play.onclick = function() {
+            toggleSound();
+        }
+	</script>
 </html>
